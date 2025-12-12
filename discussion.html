@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discussion - NextStep</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>NextStep - Discussion</h1>
+    </header>
+
+    <section class="chat-section">
+        <div id="chatBox" class="chat-box"></div>
+        <form id="chatForm">
+            <input type="text" id="messageInput" placeholder="Écris ton message..." required>
+            <button type="submit">Envoyer</button>
+        </form>
+    </section>
+
+    <script>
+        const chatForm = document.getElementById('chatForm');
+        const chatBox = document.getElementById('chatBox');
+
+        chatForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const msg = document.getElementById('messageInput').value;
+            if(msg.trim() === "") return;
+            const p = document.createElement('p');
+            p.textContent = msg;
+            chatBox.appendChild(p);
+            document.getElementById('messageInput').value = '';
+            chatBox.scrollTop = chatBox.scrollHeight;
+        });
+    </script>
+</body>
+</html>

@@ -1,26 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <title>NextStep - Accueil</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Plateforme NextStep</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <img src="logo.png" class="logo">
-  <h1>NextStep</h1>
-  <nav>
-    <a href="index.html">Accueil</a>
-    <a href="signup.html">Inscription</a>
-  </nav>
-</header>
+    <header>
+        <h1>NextStep</h1>
+        <nav>
+            <a href="#accueil">Accueil</a>
+            <a href="#inscription">Inscription</a>
+        </nav>
+    </header>
 
-<section class="hero">
-  <h2>Bienvenue sur NextStep</h2>
-  <p>Votre mini plateforme professionnelle.</p>
-  <img src="logo.png" class="hero-image" alt="NextStep et jeunes Africains motivés">
-  <a class="btn" href="signup.html">Commencer</a>
-</section>
+    <section id="accueil" class="section-accueil">
+        <img src="jeune-africain.jpg" alt="Jeune Africain motivé" class="accueil-img">
+        <h2>Bienvenue sur NextStep !</h2>
+        <p>Une plateforme pour jeunes entrepreneurs motivés comme toi !</p>
+        <a href="#inscription" class="btn">Commencer</a>
+    </section>
 
+    <section id="inscription" class="section-inscription">
+        <h2>Inscription</h2>
+        <form id="inscriptionForm">
+            <input type="text" id="nom" placeholder="Nom" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="mdp" placeholder="Mot de passe" required>
+            <button type="submit">S'inscrire</button>
+        </form>
+    </section>
+
+    <script>
+        const form = document.getElementById('inscriptionForm');
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Inscription réussie ! Bienvenue !');
+            window.location.href = 'discussion.html';
+        });
+    </script>
 </body>
 </html>
